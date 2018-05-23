@@ -1,0 +1,18 @@
+<!--pages/a/a.wxml-->
+<view class='content'>
+  <view class="section">
+    <view>
+      <movable-area style="height:0rpx; width:0rpx; background:red;">
+        <!-- display:{{display}};movestart  bindtouchstart="touch" bindchange="touch"-->
+        <movable-view wx:for="{{touchArray}}" wx:key="id" style="width:600rpx;height:844rpx;background:{{item.c0}};" direction="all" bindtouchmove='touch' id="{{item.id}}" data-index="{{item.id}}" data-main="{{mainx}}" class="main {{mainx == item.id&&leftX <=125? 'mainmove':'mainend'}} view_init">
+          <view class='' style='position:absolute;left:0;bottom:0'>
+            <view>id:{{item.id}}</view>
+            <view>name:{{item.name}}</view>
+            <view>age:{{item.age}}</view>
+            <view>index:{{index}}</view>
+          </view>
+        </movable-view>
+      </movable-area>
+    </view>
+  </view>
+</view>
